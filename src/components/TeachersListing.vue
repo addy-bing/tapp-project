@@ -505,25 +505,26 @@ export default {
             date: null,
         }
     },
-     computed: {
-            filterteacherslist: function(){
-                return this.filterteacherslistBygender(this.filterteacherslistBylocation(this.filterteacherslistBylanguage(this.filterteacherslist)))
-            }
-        },
-     methods: {
+    //  computed: {
+    //         filterteacherslist: function(){
+    //             return this.filterteacherslistBygender(this.filterteacherslistBylocation(this.filterteacherslistBylanguage(this.filterteacherslist)))
+    //         }
+    //     },
+    //  methods: {
 
-            filterteacherslistBygender: function(teacherslist){
-                return teacherslist.filter(teacherslist => !teacherslist.gender.indexOf(this.gender))
-            },
+    //         filterteacherslistBygender: function(teacherslist){
+    //             return teacherslist.filter(teacherslist => !teacherslist.gender.indexOf(this.gender))
+    //         },
 
-            filterteacherslistBylocation: function(teacherslist) {
-                return teacherslist.filter(teacherslist => !teacherslist.location.indexOf(this.location))
-            },
+    //         filterteacherslistBylocation: function(teacherslist) {
+    //             return teacherslist.filter(teacherslist => !teacherslist.location.indexOf(this.location))
+    //         },
 
-             filterteacherslistBylanguage: function(teacherslist) {
-                return teacherslist.filter(teacherslist => !teacherslist.language.indexOf(this.language))
-            },
-        },
+    //          filterteacherslistBylanguage: function(teacherslist) {
+    //             return teacherslist.filter(teacherslist => !teacherslist.language.indexOf(this.language))
+    //         },
+    //     },
+    
     mounted() {
         axios.get('https://teacherapp-api.herokuapp.com/api/teacher-list/').then((response) => {
             this.teacherslist = response.data;
